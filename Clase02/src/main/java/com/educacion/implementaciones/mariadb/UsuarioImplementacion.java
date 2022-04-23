@@ -1,7 +1,6 @@
 package com.educacion.implementaciones.mariadb;
 
 import java.util.List;
-import java.util.Map;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -11,9 +10,9 @@ import com.educacion.conexiones.MariaDB;
 import com.educacion.entidades.Usuario;
 import com.educacion.implementaciones.mapeadores.UsuarioMapeador;
 import com.educacion.interfaces.DAO;
-import com.educacion.utilidades.Fechas;
+import com.educacion.interfaces.Modulo;
 
-public class UsuarioImplementacion implements DAO<String, Usuario> {
+public class UsuarioImplementacion implements DAO<String, Usuario>, Modulo {
 	private Logger log = LogManager.getLogger();
 	private MariaDB mariaDB = new MariaDB();
 	private JdbcTemplate jdbcTemplate;
@@ -39,18 +38,22 @@ public class UsuarioImplementacion implements DAO<String, Usuario> {
 
 	@Override
 	public Boolean actualizar(Usuario usuario) {
+		// llamando al metodo
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
 	public Boolean insertar(Usuario usuario) {
+
+		// llamando al metodo
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
 	public List<Usuario> listar() {
+		// llamando al metodo
 		// TODO Auto-generated method stub
 		return null;
 	}

@@ -12,17 +12,19 @@ public class RecursoWebXML implements WebApplicationInitializer {
 
 	@Override
 	public void onStartup(ServletContext servletContext) throws ServletException {
+		// llamando al metodo
 		AnnotationConfigWebApplicationContext contexto = new AnnotationConfigWebApplicationContext();
-		contexto.setConfigLocations("com.educacion.configuraciones.RecursoSpringContexto");
+		// contexto.setConfigLocations("com.educacion.configuraciones.RecursoSpringContexto");
 		contexto.register(RecursoSpringContexto.class);
+		contexto.register(RecursoSpringAspecto.class);
 		contexto.setServletContext(servletContext);
 
 		ServletRegistration.Dynamic appServlet = servletContext.addServlet("appServlet",
 				new DispatcherServlet(contexto));
 
 		appServlet.setLoadOnStartup(1);
-		
-		appServlet.addMapping("*.do");
+
+		appServlet.addMapping("*.html");
 
 	}
 
